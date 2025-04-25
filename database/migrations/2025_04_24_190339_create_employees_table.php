@@ -22,6 +22,13 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->string('alamat_identitas');
             $table->string('alamat_domisili'); // Diperbaiki penulisannya
+            $table->string('no_telepon_rumah');
+            $table->string('status_keluarga');
+            $table->string('jumlah_anak');
+            $table->string('tinggi_badan');
+            $table->string('berat_badan');
+            $table->string('no_ktp');
+            $table->string('masa_berlaku_ktp');
             $table->string('jabatan');
             $table->string('golongan_darah');
             $table->string('agama');

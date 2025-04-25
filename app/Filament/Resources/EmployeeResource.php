@@ -61,8 +61,37 @@ class EmployeeResource extends Resource
                             ->required(),
                         Forms\Components\TextInput::make('alamat_identitas')
                             ->required(),
-                        Forms\Components\TextInput::make('alamat_domisil')
+                        Forms\Components\TextInput::make('alamat_domisili')
                             ->required(),
+                            Forms\Components\TextInput::make('no_telepon_rumah')
+                            ->label('No. Telepon Rumah')
+                            ->tel(),
+                        
+                        Forms\Components\Select::make('status_keluarga')
+                            ->options([
+                                'lajang' => 'Lajang',
+                                'menikah' => 'Menikah',
+                                'duda' => 'Duda',
+                                'janda' => 'Janda'
+                            ])
+                            ->required(),
+                        
+                        Forms\Components\TextInput::make('jumlah_anak')
+                            ->numeric()
+                            ->minValue(0),
+                        
+                        Forms\Components\TextInput::make('tinggi_badan')
+                            ->suffix('cm'),
+                        
+                        Forms\Components\TextInput::make('berat_badan')
+                            ->suffix('kg'),
+                        
+                        Forms\Components\TextInput::make('no_ktp')
+                            ->label('No. KTP'),
+                        
+                        Forms\Components\TextInput::make('masa_berlaku_ktp')
+                            ->label('Masa Berlaku KTP')
+                            ->placeholder('Seumur hidup'),
                         Forms\Components\Select::make('golongan_darah')
                             ->options([
                                 'A' => 'A',
