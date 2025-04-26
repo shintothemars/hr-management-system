@@ -129,6 +129,7 @@ class EmployeeResource extends Resource
                             Forms\Components\Textarea::make('deskripsi'),
                         ]),
                 ])
+                
         
 
             ]);
@@ -168,6 +169,10 @@ class EmployeeResource extends Resource
     {
         return [
             RelationManagers\EducationsRelationManager::class,
+            RelationManagers\FamiliesRelationManager::class,
+            RelationManagers\WorkExperiencesRelationManager::class,
+            RelationManagers\ReferencesRelationManager::class,
+
         ];
     }
 

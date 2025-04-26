@@ -45,8 +45,25 @@ class Employee extends Model
     {
         return $this->belongsTo(Department::class, 'departemen_id');
     }
+    
     public function educations(): HasMany
     {
         return $this->hasMany(Education::class);
     }
+
+    public function families()
+    {
+        return $this->hasMany(Family::class);
+    }
+
+        public function workExperiences(): HasMany
+    {
+        return $this->hasMany(WorkExperience::class);
+    }
+
+    public function references(): HasMany
+    {
+        return $this->hasMany(Reference::class);
+    }
+
 }
