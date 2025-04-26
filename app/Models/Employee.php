@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Employee extends Model
 {
@@ -43,5 +44,9 @@ class Employee extends Model
     public function departemen()
     {
         return $this->belongsTo(Department::class, 'departemen_id');
+    }
+    public function educations(): HasMany
+    {
+        return $this->hasMany(Education::class);
     }
 }
