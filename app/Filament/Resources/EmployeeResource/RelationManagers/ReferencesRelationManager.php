@@ -57,10 +57,12 @@ class ReferencesRelationManager extends RelationManager
                 
                 Tables\Columns\TextColumn::make('hubungan'),
                     
+                Tables\Columns\TextColumn::make('telepon'),
                 Tables\Columns\TextColumn::make('pekerjaan_jabatan')
                     ->label('Pekerjaan/Jabatan'),
-                
-            Tables\Columns\TextColumn::make('telepon'),
+                Tables\Columns\TextColumn::make('keterangan')
+                    ->label('Keterangan'),
+            
             ])
             ->filters([
                 //
@@ -70,6 +72,8 @@ class ReferencesRelationManager extends RelationManager
                 ->label('Tambah Referensi'),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make() // Tambahkan aksi View
+                ->label('Lihat Detail'),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
                 

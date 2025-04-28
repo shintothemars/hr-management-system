@@ -89,6 +89,8 @@ class FamiliesRelationManager extends RelationManager
                     ->label('Tambah Anggota Keluarga'),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make() // Tambahkan aksi View
+                ->label('Lihat Detail'),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
                 

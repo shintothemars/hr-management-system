@@ -172,6 +172,7 @@ class EmployeeResource extends Resource
             RelationManagers\FamiliesRelationManager::class,
             RelationManagers\WorkExperiencesRelationManager::class,
             RelationManagers\ReferencesRelationManager::class,
+            RelationManagers\EmployeeDocumentRelationManager::class,
 
         ];
     }
