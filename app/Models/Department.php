@@ -12,8 +12,8 @@ class Department extends Model
     ];
     
     // Opsional: Jika ingin relasi ke employee
-    public function employees()
-    {
-        return $this->hasMany(Employee::class, 'departemen_id');
-    }
+public function employees()
+{
+    return $this->hasMany(Employee::class, 'departemen_id');
+}
 }

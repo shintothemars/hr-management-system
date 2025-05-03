@@ -9,6 +9,7 @@ class EmployeeDocument extends Model
     use HasFactory;
 
     protected $fillable = [
+        'employee_id',
         'title',
         'type',
         'file_path',

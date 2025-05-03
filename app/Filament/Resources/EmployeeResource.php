@@ -29,12 +29,13 @@ class EmployeeResource extends Resource
                         Forms\Components\FileUpload::make('foto_profil')
                             ->image()
                             ->directory('employee-photos')
-                            ->maxSize(2048) // maksimal 2MB
                             ->acceptedFileTypes(['image/png', 'image/jpeg', 'image/webp'])
                             ->imageResizeMode('cover')
                             ->imageCropAspectRatio('1:1')
                             ->imageResizeTargetWidth(300)
                             ->imageResizeTargetHeight(300)
+                            ->previewable(true)
+                            ->visibility('public')
                             ->columnSpanFull(),
                     ])->collapsible(),
                 // Section 2: Informasi Pribadi
@@ -140,8 +141,11 @@ class EmployeeResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('foto_profil')
-                    ->circular(),
-                    
+                     ->label('Foto Profil')
+                     ->circular(),
+                //     ->url(fn ($record) => $record->foto_profil ? asset('storage/' . $record->foto_profil) : null)
+                //     ->defaultImageUrl(asset('images/default-profile.png')), // Opsional: jika tidak ada foto
+
                 Tables\Columns\TextColumn::make('nama')
                     ->searchable(),
                     
@@ -151,6 +155,7 @@ class EmployeeResource extends Resource
                 
                 Tables\Columns\TextColumn::make('email'),
             ])
+              
             ->filters([
                 //
             ])

@@ -65,9 +65,14 @@ class Employee extends Model
     {
         return $this->hasMany(Reference::class);
     }
-        public function documents()
+        
+    public function employeeDocuments()
     {
         return $this->hasMany(EmployeeDocument::class);
+    }
+    public function leaves(): HasMany
+    {
+        return $this->hasMany(Leave::class);
     }
     
 
